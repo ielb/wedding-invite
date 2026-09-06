@@ -1,0 +1,19 @@
+{
+  "model": "openai/gpt-image-2/edit",
+  "output": "outputs/fal-tetouan/tetouan-arch.webp",
+  "image_inputs": {
+    "image_urls": [
+      "public/images/embroidered-garden.webp"
+    ]
+  },
+  "input": {
+    "prompt": "Recreate the supplied embroidered textile artwork in exactly the same medium, palette and framing, but replace the Italianate garden architecture with Moroccan Andalusian architecture from Tetouan. Keep it a single flat piece of fine crewel needlework on ivory linen: raised satin-stitch white roses and jasmine, sage and olive green thread foliage, soft powder-blue thread used for distance, visible stitch direction and textile relief, no photographic realism. Compose a tall Moorish horseshoe keyhole arch rising from two slender carved columns, its spandrels worked in stitched geometric zellige mosaic banding and carved stucco arabesque tracery, crowned by a fine scalloped cornice. Behind and below the arch, stitch the Tetouan medina in soft distance: whitewashed cubic houses, green glazed tile roofs, one slender square minaret, and the Rif mountains beyond in pale blue thread. Fill the lower corners with embroidered white roses, jasmine sprays and orange trees with small stitched citrus. The entire center of the arch must remain a large, completely empty, smooth pale ivory linen field, unembroidered and free of any motif, ornament, landscape or object, reserved for text that will be added later. Absolutely no text, no lettering, no Arabic or Latin script, no calligraphy, no numerals, no monograms, no logos, no signatures, no people, no animals. Portrait orientation, symmetrical, evenly lit, edge-to-edge artwork with no border, frame, mat, paper edge or drop shadow.",
+    "image_size": {
+      "width": 1024,
+      "height": 1536
+    },
+    "quality": "high",
+    "output_format": "webp",
+    "num_images": 1
+  }
+}

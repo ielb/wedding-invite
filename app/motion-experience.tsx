@@ -1,7 +1,14 @@
 'use client';
 
 import { Pause, Play } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
+
+type MotionPreference = { enabled: boolean; reducedMotion: boolean };
+const MotionPreferenceContext = createContext<MotionPreference>({ enabled: false, reducedMotion: true });
+
+export function useMotionPreference() {
+  return useContext(MotionPreferenceContext);
+}
 
 export default function MotionExperience({ children }: { children: React.ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
@@ -44,11 +51,15 @@ export default function MotionExperience({ children }: { children: React.ReactNo
     return () => observer.disconnect();
   }, [enabled]);
 
-  return <div ref={root} className="motion-experience" data-motion={enabled ? 'on' : 'off'}>
-    {children}
-    {!reducedMotion && <button className="motion-toggle" type="button" onClick={() => setEnabled(value => !value)} aria-pressed={!enabled}>
-      {enabled ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
-      {enabled ? 'إيقاف الحركة' : 'تشغيل الحركة'}
-    </button>}
-  </div>;
+  return (
+    <MotionPreferenceContext.Provider value={{ enabled, reducedMotion }}>
+      <div ref={root} className="motion-experience" data-motion={enabled ? 'on' : 'off'}>
+        {children}
+        {!reducedMotion && <button className="motion-toggle" type="button" onClick={() => setEnabled(value => !value)} aria-pressed={!enabled}>
+          {enabled ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
+          {enabled ? 'إيقاف الحركة' : 'تشغيل الحركة'}
+        </button>}
+      </div>
+    </MotionPreferenceContext.Provider>
+  );
 }

@@ -1,8 +1,13 @@
 {
   "model": "fal-ai/kling-video/v3/standard/image-to-video",
-  "duration": "10",
-  "generate_audio": false,
-  "start_image": "video/closed-invitation.webp",
-  "end_image": "public/images/embroidered-garden.webp",
-  "prompt": "A single continuous premium wedding invitation opening, straight-on camera, portrait framing. Begin exactly on the supplied closed ivory linen gatefold card with sage and white floral embroidery and one ivory satin bow. During seconds 0 to 3, the satin bow gently loosens and gracefully unties itself, its ribbon tails sliding aside with realistic soft cloth motion. During seconds 3 to 7, the two linen panels slowly swing outward from the center seam, revealing the supplied embroidered floral arch and pale blue lake artwork underneath. By second 8.5, the closed panels and ribbon have fully moved outside the frame. End exactly on the supplied final open arch image, holding still for the final 1.5 seconds. Preserve precise textile relief, warm ivory colors, sage leaves, white flowers and the pale blank center. Locked camera, no cuts, no zoom, no hands, no people, no objects appearing in the blank center, no text, no lettering, no numerals, no monograms, no logos. Refined restrained motion, physically plausible folding panels, coherent materials."
+  "output": "outputs/fal-wedding-v2/invitation-opening.mp4",
+  "image_inputs": {
+    "start_image_url": "video/closed-invitation.webp",
+    "end_image_url": "outputs/fal-tetouan/tetouan-arch.webp"
+  },
+  "input": {
+    "prompt": "A closed ivory linen wedding invitation is untied and opens, straight-on locked camera, portrait framing. The single most important action is the satin bow: in the first two seconds the knot of the ivory satin bow visibly loosens, the loops collapse and the ribbon pulls itself undone, the two ribbon tails sliding apart and falling away with soft realistic cloth physics. The bow must clearly come untied on camera; it must not stay knotted. Only after the ribbon has released do the two embroidered linen panels swing outward from the center seam like doors, revealing the supplied Moroccan embroidered arch artwork behind them. By the final second the panels and the loosened ribbon have travelled completely out of frame and the shot rests on the supplied final artwork, held still. Preserve textile relief, warm ivory linen, sage green embroidery and white flowers throughout. Continuous single take, locked camera, no cuts, no zoom, no pan. No hands, no people, no animals, no new objects entering the blank center, no text, no lettering, no numerals, no monograms, no logos.",
+    "duration": "5",
+    "generate_audio": false
+  }
 }
