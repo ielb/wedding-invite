@@ -3,8 +3,8 @@
 import { Pause, Play } from 'lucide-react';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 
-type MotionPreference = { enabled: boolean; reducedMotion: boolean };
-const MotionPreferenceContext = createContext<MotionPreference>({ enabled: false, reducedMotion: true });
+type MotionPreference = { enabled: boolean; reducedMotion: boolean; ready: boolean };
+const MotionPreferenceContext = createContext<MotionPreference>({ enabled: false, reducedMotion: true, ready: false });
 
 export function useMotionPreference() {
   return useContext(MotionPreferenceContext);
@@ -14,12 +14,14 @@ export default function MotionExperience({ children }: { children: React.ReactNo
   const root = useRef<HTMLDivElement>(null);
   const [enabled, setEnabled] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(true);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
     const update = () => {
       setReducedMotion(preference.matches);
       setEnabled(!preference.matches);
+      setReady(true);
     };
     update();
     preference.addEventListener('change', update);
@@ -52,7 +54,7 @@ export default function MotionExperience({ children }: { children: React.ReactNo
   }, [enabled]);
 
   return (
-    <MotionPreferenceContext.Provider value={{ enabled, reducedMotion }}>
+    <MotionPreferenceContext.Provider value={{ enabled, reducedMotion, ready }}>
       <div ref={root} className="motion-experience" data-motion={enabled ? 'on' : 'off'}>
         {children}
         {!reducedMotion && <button className="motion-toggle" type="button" onClick={() => setEnabled(value => !value)} aria-pressed={!enabled}>
