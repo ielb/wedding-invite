@@ -5,7 +5,7 @@ import { useMotionPreference } from './motion-experience';
 
 export default function HeroVideo({ children }: { children: ReactNode }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { enabled, reducedMotion } = useMotionPreference();
+  const { enabled, reducedMotion, ready } = useMotionPreference();
   const [ended, setEnded] = useState(false);
   const motionOn = enabled && !reducedMotion;
 
@@ -18,7 +18,9 @@ export default function HeroVideo({ children }: { children: ReactNode }) {
   }
 
   const isOpening = motionOn && !ended;
-  const heroVideoClass = 'hero-video' + (isOpening ? ' is-opening' : ' is-static');
+  // The server cannot read motion preferences. Keep its first frame separate
+  // from the finished invitation so hydration never reveals then hides the names.
+  const heroVideoClass = 'hero-video' + (!ready ? ' is-pending' : isOpening ? ' is-opening' : ' is-static');
 
   // Runs only once `is-opening` is on the DOM, so playback starts from frame 0
   // with the video already on screen instead of a second into the fade.

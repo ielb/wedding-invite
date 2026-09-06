@@ -148,6 +148,12 @@ h1 .names-and { font-size: .39em; line-height: 1.5; margin: 0 0 2px; }
 .invitation-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero-video.is-opening .hero-copy { opacity: 0; pointer-events: none; transition: opacity .45s ease; }
 .hero-video.is-static .hero-copy { opacity: 1; transition: opacity .45s ease; }
+/* Match the video's poster before hydration. CSS can read these preferences
+   before React can, while reduced-motion and no-JS visitors keep the full invite. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .hero-video.is-pending .hero-media { background-image: url('/images/closed-invitation.webp'); }
+  .hero-video.is-pending .hero-copy { opacity: 0; pointer-events: none; }
+}
 .video-skip { position: absolute; z-index: 3; top: 16px; right: 16px; min-height: 40px; padding: 6px 13px; border: 1px solid #aebaa2; background: #f5f3ece8; color: #344b3a; font-family: inherit; font-size: 14px; cursor: pointer; }
 .video-skip:hover { background: #e8ecdf; }
 .video-skip:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
