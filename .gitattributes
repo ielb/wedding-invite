@@ -1,0 +1,2 @@
+# Calendar files retain RFC 5545 CRLF line endings.
+*.ics -text whitespace=cr-at-eol
