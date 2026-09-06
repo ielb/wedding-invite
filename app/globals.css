@@ -40,7 +40,7 @@ h2, h3 { font-family: 'Ruqaa', 'Amiri', serif; }
 .site-header { height: 72px; padding-inline: clamp(24px, 5vw, 80px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #d5d6c9; }
 .wordmark { font-family: 'Ruqaa', serif; font-size: 24px; line-height: 1.7; }
 .wordmark span { padding-inline: 3px; font-size: 19px; }
-.header-date { display: flex; gap: 10px; direction: rtl; align-items: center; font-size: 16px; }
+.header-date { display: flex; gap: 10px; direction: ltr; align-items: center; font-size: 16px; }
 .header-date span { color: #838d79; }
 /* Keep the full portrait artwork intact on both desktop and mobile. */
 .hero { position: relative; display: grid; place-items: center; padding: 24px 24px 62px; min-height: calc(100svh - 72px); overflow: hidden; }

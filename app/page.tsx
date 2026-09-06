@@ -2,8 +2,8 @@ import { ArrowDown, CalendarDays } from 'lucide-react';
 import Countdown from './countdown';
 
 const celebrations = [
-  { title: 'ليلة الحناء', day: 'الجمعة', number: '٢٣', date: '2026-10-23', description: 'نبدأ فرحتنا بليلة الحناء' },
-  { title: 'حفل الزفاف', day: 'الأحد', number: '٢٥', date: '2026-10-25', description: 'ونحتفل معكم ببداية حكايتنا' },
+  { title: 'ليلة الحناء', day: 'الجمعة', number: '23', date: '2026-10-23', description: 'نبدأ فرحتنا بليلة الحناء' },
+  { title: 'حفل الزفاف', day: 'الأحد', number: '25', date: '2026-10-25', description: 'ونحتفل معكم ببداية حكايتنا' },
 ];
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <a className="skip-link" href="#invitation">انتقل إلى الدعوة</a>
       <header className="site-header">
         <a className="wordmark" href="#home" aria-label="نهيلة وعصام، بداية الدعوة">نهيلة <span>و</span> عصام</a>
-        <a className="header-date" href="#celebrations">٢٥ <span>·</span> ١٠ <span>·</span> ٢٠٢٦</a>
+        <a className="header-date" href="#celebrations">25 <span>·</span> 10 <span>·</span> 2026</a>
       </header>
       <main id="home">
         <section className="hero" aria-label="دعوة زفاف نهيلة وعصام">
@@ -22,10 +22,10 @@ export default function Home() {
             <div className="hero-copy">
               <p className="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
               <h1><span>نهيلة</span><span className="names-and">و</span><span>عصام</span></h1>
-              <p className="hero-date"><time dateTime="2026-10-25">٢٥ أكتوبر ٢٠٢٦</time></p>
+              <p className="hero-date"><time dateTime="2026-10-25">25 أكتوبر 2026</time></p>
             </div>
           </div>
-          <div className="side-note side-note-left" aria-hidden="true"><span />أكتوبر ٢٠٢٦<span /></div>
+          <div className="side-note side-note-left" aria-hidden="true"><span />أكتوبر 2026<span /></div>
           <a className="discover" href="#invitation"><span>بكل الحب، ندعوكم</span><ArrowDown size={17} strokeWidth={1.4} aria-hidden="true" /></a>
         </section>
         <section className="blessing section-pad" id="invitation" aria-labelledby="verse-label">
@@ -34,7 +34,7 @@ export default function Home() {
           <blockquote className="quran" cite="https://quran.com/30/21">
             ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ ﴾
           </blockquote>
-          <a className="verse-source" href="https://quran.com/30/21" target="_blank" rel="noreferrer">سورة الروم، الآية ٢١</a>
+          <a className="verse-source" href="https://quran.com/30/21" target="_blank" rel="noreferrer">سورة الروم، الآية 21</a>
           <div className="invitation-message">
             <h2>وبحضوركم تكتمل فرحتنا</h2>
             <p>بكل الحب والسرور، نتشرّف نحن وعائلتانا بدعوتكم<br className="desktop-break" /> لمشاركتنا فرحة زفافنا، وبداية حياتنا معًا.</p>
@@ -49,7 +49,7 @@ export default function Home() {
                 <h3>{event.title}</h3>
                 <time className="event-date" dateTime={event.date}>
                   <span className="event-number">{event.number}</span>
-                  <span className="event-month">أكتوبر <span>٢٠٢٦</span></span>
+                  <span className="event-month">أكتوبر <span>2026</span></span>
                 </time>
                 <p className="event-description">{event.description}</p>
               </article>
@@ -67,7 +67,7 @@ export default function Home() {
         <div className="ornament" aria-hidden="true"><span />✧<span /></div>
         <p className="footer-message">أنتم أجمل من يشاركنا هذه الفرحة</p>
         <a className="footer-names" href="#home" aria-label="العودة إلى بداية الدعوة">نهيلة <span>و</span> عصام</a>
-        <time dateTime="2026-10-25">٢٥ أكتوبر ٢٠٢٦</time>
+        <time dateTime="2026-10-25">25 أكتوبر 2026</time>
       </footer>
     </>
   );

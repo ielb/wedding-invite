@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 // The start of the wedding date in Morocco; no ceremony time is implied.
 const weddingDay = Date.parse('2026-10-25T00:00:00+01:00');
-const number = new Intl.NumberFormat('ar-MA-u-nu-arab', { minimumIntegerDigits: 2, useGrouping: false });
+const number = new Intl.NumberFormat('ar-MA-u-nu-latn', { minimumIntegerDigits: 2, useGrouping: false });
 
 export default function Countdown() {
   const [remaining, setRemaining] = useState<number | null>(null);
